@@ -1489,7 +1489,7 @@ public class ProcessServiceImpl implements ProcessService {
             taskInstance.setFirstSubmitTime(taskInstance.getSubmitTime());
         }
 
-        // 新增 DATAX 任务自定参数
+        // 新增 DATAX 任务自定参数 wanggang
         if ("DATAX".equals(taskInstance.getTaskType())) {
             try {
                 List<DefinedParam> definedParams = this.definedParamMapper.queryDefinedParambyKeys(this.extractStringsInDollarParentheses(taskInstance.getTaskParams()));
