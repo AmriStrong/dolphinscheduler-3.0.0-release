@@ -124,7 +124,7 @@ public abstract class AbstractCommandExecutor {
         processBuilder.directory(new File(taskRequest.getExecutePath()));
         // merge error information to standard output stream
         processBuilder.redirectErrorStream(true);
-
+        //wang-gang  设置sudo
         // if sudo.enable=true,setting up user to run commands
         if (OSUtils.isSudoEnable()) {
             command.add("sudo");

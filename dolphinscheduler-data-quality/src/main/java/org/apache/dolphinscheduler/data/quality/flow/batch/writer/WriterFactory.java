@@ -59,7 +59,7 @@ public class WriterFactory {
     }
 
     private BatchWriter getWriter(WriterConfig writerConfig) throws DataQualityException {
-
+        // wanggang 控制写入方法
         WriterType writerType = WriterType.getType(writerConfig.getType());
         Config config = new Config(writerConfig.getConfig());
         if (writerType != null) {
@@ -69,7 +69,7 @@ public class WriterFactory {
                 case LOCAL_FILE:
                     return new LocalFileWriter(config);
                 case HDFS_FILE:
-                    return new HdfsFileWriter(config);
+                    return new LocalFileWriter(config);
                 default:
                     throw new DataQualityException("writer type " + writerType + " is not supported!");
             }
